@@ -5,5 +5,9 @@
 @stop
 
 @section('content')
-    This is content.
+    @if(Auth::check())
+        <p> Hello, {{ Auth::user()->username }} </p>
+    @else
+        <p>You are not logged in.</p>
+    @endif
 @stop
